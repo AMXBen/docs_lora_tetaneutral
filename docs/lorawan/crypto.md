@@ -266,7 +266,7 @@ Pour la suite de la documentation, contactez-nous ! En effet, c'est un des TPs d
 
 ### Failles de sécurités ?
 
-* You need much less skills to read any key: simply connect 3 wires (tx rx gnd) to the LoRa module and read the keys easily, using the standard commands, published in the documentation.
+* Lire les clés vous demandera beaucoup moins de connaissances : il suffit simplement de connecter trois cables (tx rx gnd) au module LoRa et de lire les clés en utilisant des commandes standards, comme celles présentées dans la documentation.
 
     [https://github.com/anthonykirby/lora-packet](https://github.com/anthonykirby/lora-packet)
 
@@ -294,17 +294,17 @@ Pour la suite de la documentation, contactez-nous ! En effet, c'est un des TPs d
 
 * En ABP, faire en sorte que les clés de session soient uniques pour chaque device.
 
-* Use a secure hardware element in a device to store the security credentials (en Bluetooth ou autre) mais aussi pour effectuer les opérations relatives à la vérofication d'intégrité des messages, le chiffrement et le déchiffrement. This will make it very hard to reverse-engineer the keys by scanning device memories. Additionally, use secure boot to ensure integrity of device firmware.
+* Utiliser du matériel hardware de sécurité pour stocker les références de sécurité (en Bluetooth ou autre) mais aussi pour effectuer les opérations relatives à la vérofication d'intégrité des messages, le chiffrement et le déchiffrement, ce qui aura pour effet de rendre très difficile de d'obtenir les clés par reverse-engineering en scannant les données mémoires de l'appareil. De plus, utiliser un mode de démarrage sécurisé sur votre machine permettra d'assurer l'intégrité du firmware de l'appareil.
 
 * Ajouter une couche supplémentaire de chiffrement à la couche application. On peut utiliser un chiffrement asymétrique.
 
 * Toujours activer le compteur des messages uplink/downlink dans le serveur de réseau pour éviter les _replay attacks_
 
-* You can use your own private network server and/or application server with own gateways to prevent unauthorized access at the cloud level
+* Vous pouvez utiliser votre propre serveur en réseau privé et serveur d'applications, avec ses propres gateways, pour limiter au maximum les accès non autorisés au niveau du cloud.
 
 * Envoyer des messages aléatoires à intervalles irréguliers pour éviter les attaques de collecte de métadonnées et masquer l'activité (activités du noeud en fonction des événements (quelqu'un sonne à la porte un message est envoyé...)
 
-LoRaWAN was designed for hardware-constrained devices, so it had to balance many tradeoffs. Also, keep in mind that most applications are for sending data from distributed sensors to the cloud, not for controlling ATM cash dispensers. For typical applications, it's an easy to use, cheap, and effectively secure solution.
+LoRaWaN a été conçu pour les appareils physiques sous contraintes, donc pour faire l'équilibre entre de nombres compromis. Aussi, il vous faut garder en tête que la plupart des applications sont conçues pour envoyer des données depuis des capteurs distribués vers le cloud, pas pour contrôler des distributers de billets automatiques. Pour des applications typiques, c'est simple d'utilisation, bon marché et avec de bonnes sécurités intégrées. 
 
 ## Ressources
 
@@ -322,6 +322,6 @@ En explorant le code de l'outils nous avons remarqué qu'ils utilisaient les lib
 
 Voir [https://www.elektormagazine.com/news/lorawan](https://www.elektormagazine.com/news/lorawan) (à vérifier dans les specifications)
 
-When you want to decode & decrypt a LoRaWAN PHYPayload yourself, please see: [https://godoc.org/github.com/brocaar/lorawan#example-PHYPayload--Decode](https://godoc.org/github.com/brocaar/lorawan#example-PHYPayload--Decode) 142
+Si vous cherchez à décoder et décrypter un PHYPayload LoRaWaN de vous-même, consultez : [https://godoc.org/github.com/brocaar/lorawan#example-PHYPayload--Decode](https://godoc.org/github.com/brocaar/lorawan#example-PHYPayload--Decode) 142
 
-For just decrypting the FRMPayload, please see: [https://godoc.org/github.com/brocaar/lorawan#EncryptFRMPayload](https://godoc.org/github.com/brocaar/lorawan#EncryptFRMPayload) 114
+Pour décrypter le FRMPayload, consultez : [https://godoc.org/github.com/brocaar/lorawan#EncryptFRMPayload](https://godoc.org/github.com/brocaar/lorawan#EncryptFRMPayload) 114
